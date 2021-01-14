@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Sourceless - {{ post.metadata.title }}</title>
+        <meta name="description" content="{{ post.metadata.summary }}"/>
+        <meta name="keywords" content="{{ post.metadata.tags }}"/>
+        <meta charset="utf-8"/>
+        <meta name="author" content="Laurence Pakenham-Smith"/>
+        <meta name="copyright" content="2020-{{ current-year }} Laurence Pakenham-Smith"/>
+        <meta name="robots" content="index"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="{{ url }}/assets/css/main.css"/>
+    </head>
+
+    <body>
+        <code>
+            {{ header }}
+
+            posted {{ post.formatted-date }}
+            {{ post.content }}
+
+            {{ footer }}
+        </code>
+    </body>
+</html>

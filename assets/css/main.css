@@ -1,0 +1,15 @@
+body {
+    height: 100vh;
+    background: #1F2933;
+    color: #CBD2D9;
+}
+
+a {
+    color: #F5F7FA;
+}
+
+code {
+    display: block;
+    width: 40em;
+    margin: 10em auto;
+}

@@ -1,0 +1,7 @@
+<h1>sourceless</h1>
+
+
+<a href="{{ url }}/index.html">index</a>
+{% for page in pages %}
+    <a href="{{ url }}/{{ page.filename }}.html">{{ page.metadata.title }}</a>
+{% endfor %}

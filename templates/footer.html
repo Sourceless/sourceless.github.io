@@ -1,0 +1,6 @@
+{% if prev-post %}
+<a href="{{ url }}/posts/{{ prev-post.filename }}.html">← {{ prev-post.metadata.title }}</a>
+{% endif %}
+{% if next-post %}
+<a href="{{ url }}/posts/{{ next-post.filename }}.html">{{ next-post.metadata.title }} →</a>
+{% endif %}
