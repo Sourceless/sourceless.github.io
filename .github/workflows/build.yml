@@ -10,6 +10,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+        fetch-depth: 0
     - name: git fetch
       run: git fetch
     - name: checkout www
@@ -25,7 +28,7 @@ jobs:
     - name: git reset www
       run: git reset www
     - name: delete non-dist folders
-      run: ls -a | grep -v dist | xargs rm -r
+      run: ls | grep -v dist | xargs rm -r
     - name: pull contents out of dist
       run: cp -r dist/* .
     - name: delete dist folder
@@ -36,3 +39,14 @@ jobs:
       run: git checkout www
     - name: git status
       run: git status
+    - name: Set git user
+      run: |
+        git config --local user.email "bot@sourceless.org"
+        git config --local user.name "Site Builder Bot"
+    - name: commit
+      run: git commit -m "www-build-$GITHUB_RUN_NUMBER"
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: www
