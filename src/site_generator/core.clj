@@ -136,6 +136,7 @@
      (sp/render header-template {:pages ordered-pages
                                  :url url}))))
 
+;; TODO: pass in url at build time
 ;; TODO: Put this on gh actions/pages
 ;; TODO: unify templates so that there is a layout template
 ;; TODO: style improvements
