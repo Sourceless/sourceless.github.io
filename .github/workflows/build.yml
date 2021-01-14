@@ -10,12 +10,18 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: git fetch
+      run: git fetch
+    - name: checkout www
+      run: git checkout -t origin/www
+    - name: ensure pull
+      run: git pull
+    - name: return to master
+      run: git checkout master
     - name: Install dependencies
       run: lein deps
     - name: Build site
       run: ./build.sh
-    - name: git fetch
-      run: git fetch
     - name: git reset www
       run: git reset www
     - name: delete non-dist folders
