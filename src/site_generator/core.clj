@@ -12,7 +12,7 @@
 (def assets-dir (clojure.java.io/file "assets"))
 (def templates-dir (clojure.java.io/file "templates"))
 
-(def url "file:///home/laurence/src/sourceless.github.io/dist")
+(def url (first *command-line-args*))
 
 
 (defn get-template [name]
