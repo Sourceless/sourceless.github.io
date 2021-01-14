@@ -12,3 +12,4 @@ mkdir -p dist
 mkdir -p dist/posts
 lein run $URL
 cp -r assets dist/assets
+cp CNAME dist/CNAME
