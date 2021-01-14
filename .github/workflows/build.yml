@@ -24,15 +24,17 @@ jobs:
     - name: Install dependencies
       run: lein deps
     - name: Build site
-      run: ./build.sh
+      run: ./build.sh https://sourceless.org
     - name: git reset www
       run: git reset www
     - name: delete non-dist folders
       run: ls | grep -v dist | xargs rm -r
     - name: pull contents out of dist
       run: cp -r dist/* .
-    - name: delete dist folder
-      run: rm -r dist
+    - name: delete unused stuff
+      run: |
+        rm -r dist
+        rm -r .github
     - name: git add .
       run: git add .
     - name: checkout www
