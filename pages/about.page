@@ -3,4 +3,20 @@
  :title "about"
  :order 1}
 ---
-This is an about page
+Hi, I'm Laurence Pakenham-Smith.
+
+I'm a software engineer in the Healthcare industry, with experience in the
+NHS (UK) and the US Health insurance industry.
+
+My topics of particular interest are:
+* Building high performing teams
+* Building software that helps teams perform
+* Making delightful interfaces
+* Provably correct computing
+
+I've dabbled in a lot of things, including:
+* Formal methods
+* Computer graphics
+
+Most of my professional experience is in Python, Ruby, JavaScript, and similar
+languages, but in my spare time I build things in Clojure and Rust.

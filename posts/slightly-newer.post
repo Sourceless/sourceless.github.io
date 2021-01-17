@@ -1,7 +1,0 @@
-{:date #inst "2020-01-12"
- :tags ["test" "newer"]
- :title "Test post 2 - the newer one"}
----
-This is a test post that should be rendered *nicely* in _markdown_.
-
-And it comes first in the index list!

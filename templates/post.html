@@ -14,12 +14,13 @@
     </head>
 
     <body>
-        <code>
+        <code id="content">
             {{ header }}
-
-            posted {{ post.formatted-date }}
             {{ post.content }}
-
+            <br/>
+            Posted {{ post.formatted-date }}
+            <br/>
+            <br/>
             {{ footer }}
         </code>
     </body>

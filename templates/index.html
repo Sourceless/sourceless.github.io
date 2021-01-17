@@ -14,13 +14,14 @@
     </head>
 
     <body>
-        <code>
+        <code id="content">
             {{ header }}
-            <ul>
-                {% for post in posts %}
-                <li><a href="{{ url }}/posts/{{ post.filename }}.html">{{ post.metadata.title }}</a> {{ post.formatted-date }}
-                {% endfor %}
-            </ul>
+            <br/>
+            <br/>
+            <br/>
+            {% for post in posts %}
+                {{ post.formatted-date}} <a href="{{ url }}/posts/{{ post.filename }}.html">{{ post.metadata.title }}</a><br />
+            {% endfor %}
         </code>
     </body>
 </html>

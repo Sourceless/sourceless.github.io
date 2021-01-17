@@ -1,5 +1,0 @@
-{:date #inst "2020-01-11"
- :tags ["test"]
- :title "Test post"}
----
-This is a test post that should be rendered *nicely* in _markdown_.
