@@ -17,6 +17,8 @@ Feel free to look at the code (linked above) if you want, but it's really the le
 * Page/post metadata stored as EDN (Jekyll-style, but EDN isntead of YAML)
 
 ### Getting Github actions to deploy from my own generator
+I hasten to note this is by no means revolutionary or new. But here's how I did it.
+
 [Github Pages comes with Jekyll site generation built in](https://docs.github.com/en/github/working-with-github-pages/setting-up-a-github-pages-site-with-jekyll).
 This is nice, unless you want to use your own generator.
 
@@ -45,3 +47,5 @@ So what am I left with?
 Seems like it fits the bill! I'm happy with the output, and maybe I _will_ spend some time improving the code to something I would be proud to show to people, but the fact remains: *working code that solves the problem is better than neat code that doesn't work _yet_*.
 
 # 👋
+
+[Follow the discussion on Hacker News](https://news.ycombinator.com/item?id=25813217)
