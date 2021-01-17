@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Sourceless - Getting github pages to work with my custom site generator</title>
+        <meta name="description" content=""/>
+        <meta name="keywords" content="["tutorial" "guide" "how"]"/>
+        <meta charset="utf-8"/>
+        <meta name="author" content="Laurence Pakenham-Smith"/>
+        <meta name="copyright" content="2020-2021 Laurence Pakenham-Smith"/>
+        <meta name="robots" content="index"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="https://sourceless.org/assets/css/main.css"/>
+    </head>
+
+    <body>
+        <code id="content">
+            <h1>sourceless</h1>
+
+
+<a href="https://sourceless.org">index</a>
+
+    <a href="https://sourceless.org/about.html">about</a>
+
+    <a href="https://sourceless.org/contact.html">contact</a>
+
+
+            <h2>Getting github pages to work with my custom site generator</h2><p>So, I built a <a href='https://github.com/Sourceless/sourceless.github.io'>crappy site generator</a>. It's pretty bad, which is the result of some very targeted design decisions:</p><ul><li>I didn't want to spend a huge amount of effort building it. This is for fun, not work. You're not going to find any unit tests or any significant refactoring effort.</li><li>I want to generate a fast site that I can host for free (sans domain costs).</li><li>I want it to be easy to author new posts in my tool of choice (emacs).</li><li>Deploying the website should be a <code>git push</code>.</li></ul><p>Feel free to look at the code (linked above) if you want, but it's really the least interesting part of this post. At a quick summary, here's what it can do:</p><ul><li>Fixed index page that lists posts and pages</li><li>Pages and posts generated from markdown</li><li>Page/post metadata stored as EDN (Jekyll-style, but EDN isntead of YAML)</li></ul><h3>Getting Github actions to deploy from my own generator</h3><p><a href='https://docs.github.com/en/github/working-with-github-pages/setting-up-a-github-pages-site-with-jekyll'>Github Pages comes with Jekyll site generation built in</a>. This is nice, unless you want to use your own generator.</p><p>Now of course, you <i>could</i> generate it locally and push it, but really, where's the fun in that? So, let's get github to do all the work.</p><p>For reference, <a href='https://github.com/Sourceless/sourceless.github.io/blob/master/.github/workflows/build.yml'>here is the action that builds the site</a>. At a high level, it:</p><ol><li>Generates the site from the files in the repo</li><li>Resets to the <code>www</code> branch, <a href='https://github.com/Sourceless/sourceless.github.io/blob/master/.github/workflows/build.yml'>which contains the built output</a> served by GitHub pages (you can change the branch it watches in settings)</li><li>Checks out and adds files</li><li>Makes a new commit postfixed by the actions run number</li><li>Pushes to the <code>www</code> branch.</li></ol><p>(Note to readers: I haven't gone through this with a fine-tooth comb. It's quite possible that the reset is entirely unnecessary.)</p><p>The fantastic <a href='https://github.com/ad-m/github-push-action'>GitHub Push Action by ad-m</a> was instrumental in getting this to work so easily.</p><h3>The end result</h3><p>So what am I left with?</p><ul><li>A small, lean, html-only site</li><li>On free hosting</li><li>Using any site generator I want</li><li>Pushing a new version to master auto-generates a new site</li></ul><p>Seems like it fits the bill! I'm happy with the output, and maybe I <i>will</i> spend some time improving the code to something I would be proud to show to people, but the fact remains: <em>working code that solves the problem is better than neat code that doesn't work <i>yet</i></em>.</p><h1>👋</h1>
+            <br/>
+            Posted 2020-01-17
+            <br/>
+            <br/>
+            
+
+
+        </code>
+    </body>
+</html>

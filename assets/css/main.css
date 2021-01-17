@@ -1,6 +1,6 @@
 body {
     height: 100vh;
-    background: #1F2933;
+    background: #323F4B;
     color: #CBD2D9;
 }
 
@@ -9,7 +9,23 @@ a {
 }
 
 code {
+    background: #1F2933;
+    color: #E4E7DB;
+}
+
+#content {
+    background: #323F4B;
     display: block;
     width: 40em;
     margin: 10em auto;
+}
+
+h2, h3, h4, h5, h6 {
+    margin-top: 3em;
+}
+
+@media only screen and (max-width: 768px) {
+    #content {
+        width: 100%;
+    }
 }
