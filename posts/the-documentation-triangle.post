@@ -1,0 +1,90 @@
+{:date #inst "2021-03-19"
+ :tags ["documentation", "self-documenting", "documentation-as-code", "opinion", "triangle"]
+ :title "The Documentation Triangle (or, why code isn't self-documenting)"}
+---
+## The Documentation Triangle
+
+At some point in your coding career, you've probably heard something like:
+
+> "My code is self documenting"
+
+or
+
+> "Code IS documentation"
+
+These statements can be hard to argue against, especially if they come from
+someone who is more experienced than you. A lot of the trouble is that they
+*are not wrong* -- well, they're not *completely* wrong.
+
+### The goal of documentation
+Why do we document things? If the code was enough, we would never need
+tutorials, API documentation, or anything of the sort, right? What user
+need is being fulfilled by having more than just code to communicate what our
+programs and services do?
+
+It sounds obvious, but **documentation exists so that code can be easily used**.
+
+This is incredibly easy to forget when the program is all in your head and you
+have an intuitive understanding -- but to fresh eyes, is your code really all
+that easy to approach?
+
+### What, Why, How: The Documentation Triangle
+Here's a rule of thumb I've seen repeated in a few places regarding how to
+ensure that your documentation is up to scratch.
+
+Why a triangle? Well, triangles are a strong shape, and any missing side renders
+it entirely structurally unsound - just as missing out vital documentation
+can make your code as good as unusable to others.
+
+#### What (code)
+This is generally what people are going for when they say "my code is self
+documenting". Clear, concise, and well-written code is a form of documentation
+in itself.
+
+It is the most honest account of what actually happens when you run the code,
+what the most important data structures are, and what interfaces you'll be
+able to interact with. Some languages are better than this for others, and
+supplementary information such as type signatures can be incredibly helpful
+in understanding some code that's new to you.
+
+However, there are some things this alone leaves out...
+
+#### Why (comments)
+Every program has a history - whether in the very mundane sense of having a
+history in version control, or a long and detailed history of changes it has
+undergone to meet various challenges.
+
+It's this latter case that is the most crucial to note **why** certain pieces
+of code exist in their current state.
+
+Comments are most often the vehicle for these sort of margin notes. Noting
+that this thing was done in this way for optimization reasons, or another
+thing was a dirty hack leaves signposts for the next maintainer to know
+what compromises have been made in building this software.
+
+Maintaining (legacy) code without any comments is less like being a mechanic,
+and much more like being an archaeologist.
+
+#### How (context)
+The last side of the triangle is often the most neglected. It might live in
+docstrings, or in confluence, be automatically generated, or be in a carefully
+crafted README, but it's all information on the context in which the code
+will be executed.
+
+**No program exists in a vacuum**. There is always some environment, some
+organisation, some process that it lives in or serves, and taken out of said
+context, it is entirely useless.
+
+Failing to recognise this is the number one leading cause of new users and
+junior devs being unable to do 'this simple task' (don't quote me on this,
+I have no data).
+
+There's a great litmus test for this. Take the new process or pipeline or
+whatever that you've implemented (be it setting up a repo, running a job, etc.)
+and find yourself someone that's technically competent but unfamiliar with
+what you're working on. Plonk them in front of it and **shut the fuck up**.
+Watch them struggle through it and only help them if they are genuinely, truly
+stumped. This will very quickly tell you where you need to spend effort on
+documentation.
+
+Heck - make it part of your code review.
