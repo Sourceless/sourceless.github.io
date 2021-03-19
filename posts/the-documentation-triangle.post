@@ -30,13 +30,13 @@ that easy to approach?
 
 ### What, Why, How: The Documentation Triangle
 ```
-        What
-         /\
-        /  \
-       /    \
-      /      \
-     /        \
-    /__________\
+        What        
+         /\         
+        /  \        
+       /    \       
+      /      \      
+     /        \     
+    /__________\    
  Why            How 
 ```
 Here's a rule of thumb I've seen repeated in a few places regarding how to
