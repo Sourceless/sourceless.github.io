@@ -1,8 +1,8 @@
 {:date #inst "2021-03-19"
  :tags ["documentation", "self-documenting", "documentation-as-code", "opinion", "triangle"]
- :title "The Documentation Triangle (or, why code isn't self-documenting)"}
+ :title "The Documentation Triangle"}
 ---
-## The Documentation Triangle
+## The Documentation Triangle (or, why code isn't self documenting)
 
 At some point in your coding career, you've probably heard something like:
 
@@ -29,6 +29,16 @@ have an intuitive understanding -- but to fresh eyes, is your code really all
 that easy to approach?
 
 ### What, Why, How: The Documentation Triangle
+```
+        What
+         /\
+        /  \
+       /    \
+      /      \
+     /        \
+    /__________\
+ Why            How 
+```
 Here's a rule of thumb I've seen repeated in a few places regarding how to
 ensure that your documentation is up to scratch.
 
@@ -46,7 +56,6 @@ what the most important data structures are, and what interfaces you'll be
 able to interact with. Some languages are better than this for others, and
 supplementary information such as type signatures can be incredibly helpful
 in understanding some code that's new to you.
-
 However, there are some things this alone leaves out...
 
 #### Why (comments)
