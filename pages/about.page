@@ -5,18 +5,18 @@
 ---
 Hi, I'm Laurence Pakenham-Smith.
 
-I'm a software engineer in the Healthcare industry, with experience in the
-NHS (UK) and the US Health insurance industry.
+I'm an SRE Manager in the AdTech industry.
+In previous lives I've done SRE, security, and software in Healthcare and Government.
+
+Notable past projects include:
+* [NHS Digital's API Platform](https://digital.nhs.uk/developer/api-catalogue)
+* [data.gov.uk](https://data.gov.uk)
 
 My topics of particular interest are:
-* Building high performing teams
-* Building software that helps teams perform
-* Making delightful interfaces
-* Provably correct computing
+* Building and running high performing teams
+* User-first security, compliance, and governance
+* Logic programming
+* Type systems
 
-I've dabbled in a lot of things, including:
-* Formal methods
-* Computer graphics
-
-Most of my professional experience is in Python, Ruby, JavaScript, and similar
-languages, but in my spare time I build things in Clojure and Rust.
+I've worked on a lot of projects in a lot of languages and frameworks; the best
+of those were backed by great teams that knew their tools inside out.
