@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Sourceless - Perfect isn't Good Enough</title>
+        <meta name="description" content=""/>
+        <meta name="keywords" content="["perfect" "perfection" "good-enough" "laziness"]"/>
+        <meta charset="utf-8"/>
+        <meta name="author" content="Laurence Pakenham-Smith"/>
+        <meta name="copyright" content="2020-2022 Laurence Pakenham-Smith"/>
+        <meta name="robots" content="index"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="https://sourceless.org/assets/css/main.css"/>
+    </head>
+
+    <body>
+        <code id="content">
+            <h1>sourceless</h1>
+
+
+<a href="https://sourceless.org">index</a>
+
+    <a href="https://sourceless.org/about.html">about</a>
+
+    <a href="https://sourceless.org/contact.html">contact</a>
+
+
+            <h2>Perfect isn't Good Enough</h2><blockquote><p> Perfect is the enemy of the good </p></blockquote><p>Or so goes the old adage. For developers, perfection is a mightier enemy than users, project managers, and even one's own lack of skill.</p><h3>In pursuit of greatness</h3><p>Many junior (and senior!) engineers strive to write the <em>best</em> code. Clean code. Well-tested. Fully covered. Abstractions on abstractions making beautiful, elegant interfaces.</p><p>Beautiful, elegant, fragile interfaces, which shatter upon exposure to the expectations of an ever-changing world.</p><p>No (useful) system exists in a vacuum. Users' needs change over time, as does the substrate on which software relies. <strong>Nothing is permanent.</strong></p><h3>The worst thing I've ever built</h3><p>Very early in my career, I built a system to click through HTML forms, submit some information and return some information. There weren't APIs for this kind of thing, so traversing through legacy websites was the only way.</p><p>Even with that short description, you've probably already thought how you would do it; and most of you probably have a better plan than I, a junior developer at the time, did.</p><p>So I birthed a new <strong>language</strong> in to the world. A powerful tool to be sure. By issuing a list of simple commands, a headless browser would go off and perform the commands, fill the forms, and return the information we needed.</p><p>Great! Right?</p><p>But then there were different forms that were differently bad. Commands had to change and gain options. Commands were constantly bug-fixed. The code that ran was stored in a SQL database, so changing anything required a full run of the system and debugging was waiting for logs to populate. Every new integration made the system heavier and bigger and buggier.</p><p>If you're cringing &ndash; that's correct. If you're not &ndash; come back in a couple years (after you finish reading this).</p><h3>The making of burdens</h3><p>Why was that system so bad? What was it that I did that made it so inextensible and brittle?</p><p>The first reason is <strong>greed</strong>. I wanted to make something <em>cool</em>. I sought a challenge where non existed! The problem I was seeking to solve was primarily my own creation.</p><p>The second reason is <strong>ignorance</strong>. I naively believed that the original purpose of the system is all it would ever do.</p><p>The third, and perhaps worst reason, is <strong>hubris</strong>. Perfection for my own selfish reasons &ndash; not for the user, but the maker.</p><p>I didn't learn how to control each of these right away, and still combat each of these in my working and hobby lives. In moderation, these things are a positive force for learning, but when they take over &ndash; beware.</p><h3>A successful mistake</h3><p>My most recent relapse was creating an internal tool for a team to register public keys into a repository. By most measures I did an extremely good job of it &ndash; it was reliable, did only what it needed to, and was easy for me to extend.</p><blockquote><p> 'easy for me to extend' </p></blockquote><p>Ah. Now there was the problem. This tool I created became a victim of its own success and, due to other commitments, changes needed to be made by other members of my team.</p><p>Which, for a little web frontend, would have been fine. Had I been on a team used to writing purely functional code, and had I not written it in Elm (no shade to Elm, it's a fantastic language, but it was the wrong choice in this context).</p><p>I had failed to keep in mind the future life of this thing I had created.</p><p>Code, much like art, ceases to belong to its author once it is released in to the world.</p><h3>Valueless perfection and glorious mediocrity</h3><p>Each of these issues of greed, ignorance, and hubris can be avoided through a judicious application of mediocrity.</p><p>The key to this is recognising that the time you spend trying to create something perfect is not only extremely expensive (you could release something much earlier), but also holds little value. A program is worthless until it is used, and will not grow in value if you make it too hard to change.</p><p>This doesn't mean you shouldn't experiment and sharpen your skills - just make sure you are aiming at a target, and not your own or someone else's foot.</p><h3>Doing the dumbest possible thing</h3><p>It's here, then, that I urge you to <strong>do the dumbest possible thing</strong>.</p><p>That may be somewhat hyperbolic, but here's what I mean by it:</p><ul><li>Your code probably isn't written to serve you, so before anything else  make sure it serves the user's needs. You have plenty of time to play  on your own time.</li><li>Don't write more than you need to. Doing anything more than is sufficient  is a waste of time. One-off script? Don't write tests for it. Wrote the  same thing twice? Great, leave it. You don't know if every use case is going  to look like that (aka <a href='https://en.wikipedia.org/wiki/Don%27t_repeat_yourself'>Avoid Hasty Abstractions</a>).</li><li>Get it out the door. The code you write has no value until it is used.  Your assumptions can only be validated if you have something to test against!  This doesn't mean you should ship completely broken stuff - what  it does mean, however, is that you need a full solution to the problem,  even if it's a crappy solution, so that you can make sure you're building  the right thing.</li><li>Optimise nothing. You don't know what's going to be the slowest part yet,  so don't waste effort solving a problem you don't have.</li></ul><p>In other words; make it <strong>Just Good Enough</strong> to do what you need.</p>
+            <br/>
+            Posted 2022-06-22
+            <br/>
+            <br/>
+            
+<a href="https://sourceless.org/posts/relearning-to-learn.html">← Relearning to Learn</a>
+
+
+
+        </code>
+    </body>
+</html>
