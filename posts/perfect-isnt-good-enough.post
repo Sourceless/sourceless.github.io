@@ -1,0 +1,132 @@
+{:date #inst "2022-06-21"
+ :tags ["perfect", "perfection", "good-enough", "laziness"]
+ :title "Perfect isn't Good Enough"}
+---
+## Perfect isn't Good Enough
+
+> Perfect is the enemy of the good
+
+Or so goes the old adage. For developers, perfection is a mightier enemy
+than users, project managers, and even one's own lack of skill.
+
+### In pursuit of greatness
+
+Many junior (and senior!) engineers strive to write the *best* code.
+Clean code. Well-tested. Fully covered. Abstractions on abstractions
+making beautiful, elegant interfaces.
+
+Beautiful, elegant, fragile interfaces, which shatter upon exposure to
+the expectations of an ever-changing world.
+
+No (useful) system exists in a vacuum. Users' needs change over time,
+as does the substrate on which software relies. **Nothing is permanent.**
+
+### The worst thing I've ever built
+
+Very early in my career, I built a system to click through HTML forms,
+submit some information and return some information. There weren't APIs
+for this kind of thing, so traversing through legacy websites was the
+only way.
+
+Even with that short description, you've probably already thought how you
+would do it; and most of you probably have a better plan than I, a junior
+developer at the time, did.
+
+So I birthed a new **language** in to the world. A powerful tool to be sure.
+By issuing a list of simple commands, a headless browser would go off and
+perform the commands, fill the forms, and return the information we needed.
+
+Great! Right?
+
+But then there were different forms that were differently bad. Commands had
+to change and gain options. Commands were constantly bug-fixed. The code
+that ran was stored in a SQL database, so changing anything required a full
+run of the system and debugging was waiting for logs to populate. Every
+new integration made the system heavier and bigger and buggier.
+
+If you're cringing -- that's correct. If you're not -- come back in a couple
+years (after you finish reading this).
+
+
+### The making of burdens
+
+Why was that system so bad? What was it that I did that made it so
+inextensible and brittle?
+
+The first reason is **greed**. I wanted to make something *cool*. I sought
+a challenge where non existed! The problem I was seeking to solve was
+primarily my own creation.
+
+The second reason is **ignorance**. I naively believed that the original
+purpose of the system is all it would ever do.
+
+The third, and perhaps worst reason, is **hubris**. Perfection for my own
+selfish reasons -- not for the user, but the maker.
+
+I didn't learn how to control each of these right away, and still combat
+each of these in my working and hobby lives. In moderation, these things
+are a positive force for learning, but when they take over -- beware.
+
+### A successful mistake
+
+My most recent relapse was creating an internal tool for a team to register
+public keys into a repository. By most measures I did an extremely good
+job of it -- it was reliable, did only what it needed to, and was easy
+for me to extend.
+
+> 'easy for me to extend'
+
+Ah. Now there was the problem. This tool I created became a victim of its
+own success and, due to other commitments, changes needed to be made by
+other members of my team.
+
+Which, for a little web frontend, would have been fine. Had I been on a
+team used to writing purely functional code, and had I not written it in
+Elm (no shade to Elm, it's a fantastic language, but it was the wrong
+choice in this context).
+
+I had failed to keep in mind the future life of this thing I had created.
+
+Code, much like art, ceases to belong to its author once it is released
+in to the world.
+
+### Valueless perfection and glorious mediocrity
+
+Each of these issues of greed, ignorance, and hubris can be avoided through
+a judicious application of mediocrity.
+
+The key to this is recognising that the time you spend trying to create
+something perfect is not only extremely expensive (you could release something
+much earlier), but also holds little value. A program is worthless until it
+is used, and will not grow in value if you make it too hard to change.
+
+This doesn't mean you shouldn't experiment and sharpen your skills - just
+make sure you are aiming at a target, and not your own or someone else's
+foot.
+
+### Doing the dumbest possible thing
+
+It's here, then, that I urge you to **do the dumbest possible thing**.
+
+That may be somewhat hyperbolic, but here's what I mean by it:
+
+* Your code probably isn't written to serve you, so before anything else
+  make sure it serves the user's needs. You have plenty of time to play
+  on your own time.
+
+* Don't write more than you need to. Doing anything more than is sufficient
+  is a waste of time. One-off script? Don't write tests for it. Wrote the
+  same thing twice? Great, leave it. You don't know if every use case is going
+  to look like that (aka [Avoid Hasty Abstractions](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)).
+
+* Get it out the door. The code you write has no value until it is used.
+  Your assumptions can only be validated if you have something to test against!
+  This doesn't mean you should ship completely broken stuff - what
+  it does mean, however, is that you need a full solution to the problem,
+  even if it's a crappy solution, so that you can make sure you're building
+  the right thing.
+
+* Optimise nothing. You don't know what's going to be the slowest part yet,
+  so don't waste effort solving a problem you don't have.
+
+In other words; make it **Just Good Enough** to do what you need.
