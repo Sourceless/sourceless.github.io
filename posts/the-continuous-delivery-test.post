@@ -39,6 +39,11 @@ Trunk-based development rolls up a bunch of good practices under one system.
 It forces you to have one good `main` branch that is always deployable (and by implication,
 always able to roll back), and encourages merging small features in one at a time.
 
+Having an always-deployable `main` means that your deploy process becomes
+a lot more boring (which is great!), and is often indicative of a process
+that supports developers, rather than requiring long hours spent resolving
+merge conflicts and preparing release notes.
+
 
 ### 3. Do you merge little and often?
 
@@ -73,22 +78,18 @@ production env, run the tests, and then kill it, or where this is not possible,
 you can run tests against mirrored traffic, or even run a canary.
 
 
-### 7. Do you have a `main` branch that is always deployable?
-
-This is possibly the most important takeaway (and it's present in the 2015 circleci post
-referenced above!). Having an always-deployable `main` will make deploys **boring**.
-
-In a good way.
-
-
-### 8. Do you deploy to production as soon as `main` is updated?
+### 7. Do you deploy to production as soon as `main` is updated?
 
 Your deploy should be automated and happen right upon merge. This removes a burden
 from the team delivering a product and allows them to focus on features and reliability
-rather than long-winded release ceremonies.
+rather than long-winded release ceremonies. It can be hard to get here from releasing
+once a day, week, etc. -- a mature approach to managing the risks of deployment
+is required, as well as battle-tested deploy processes and tools.
+
+The earlier you start doing this, the easier it will be.
 
 
-### 9. Does your deploy process self-heal?
+### 8. Does your deploy process self-heal?
 
 When a deployment fails, can you roll back automatically? In addition to this, you should
 be able to roll back manually where necessary (though it's generally best to fail forwards!)
@@ -98,17 +99,20 @@ other strategies to mitigate outage risk. It's very powerful to be able to turn 
 possible outage into a mere degradation.
 
 
-### 10. Does your Infrastructure as Code live alongside the service it hosts?
+### 9. Does your Infrastructure as Code live alongside the service it hosts?
 
 It's a good idea to colocate any IaC with the software it's running rather than keeping
 the two in separate repositories. This dodges any dependency management between the two,
 and in many cases will save you a pipeline or two.
 
 It's an antipattern (in the author's opinion) to have all infrastructure code completely
-separate from
+separate from the application it supports. Common or shared infrastructure could be argued to
+have its own place, but a product should have all its pieces as close together as possible.
+
+[Monorepos](https://semaphoreci.com/blog/what-is-monorepo) are an extreme example of this philosophy.
 
 
-### 11. Do you use feature flags?
+### 10. Do you use feature flags?
 
 Releases are a terrible mechanism for launching new features. You want to be able to
 run that shiny new feature in production as soon as possible, and you can't do that
@@ -116,7 +120,7 @@ if you conflate a feature's launch with its release. This also means that you ca
 preview and refine changes with flagship customers before rolling them out more widely.
 
 
-### 12. Do you include ticket IDs in your commits or branches?
+### 11. Do you include ticket IDs in your commits or branches?
 
 You need to be able to tie every commit back to the ticket that spawned it. It might not
 be you debugging a change that you merged, so it needs to be really easy to go back
