@@ -38,7 +38,7 @@
 (defn parse-template [[filename content]]
   (let [parts (str/split content #"---")
         metadata (edn/read-string (first parts))
-        markdown (md/md-to-html-string (last parts))]
+        markdown (md/md-to-html-string (str/join "---" (rest parts)))]
     {:filename (strip-dotpost filename)
      :metadata metadata
      :content markdown}))
