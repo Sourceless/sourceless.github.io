@@ -15,7 +15,7 @@ In 2015, John Kodumal of LaunchDarkly published an updated [Joel Test for Contin
 While being far more up-to-date, it's still slipped a little in relevance.
 
 If this post were to have an alternate title, it'd be 'Front-load Your Risks'.
-All of the advices below seeks to move risks away from the act of deployment
+All of the advice below seeks to move risks away from the act of deployment
 and move them to earlier steps of the development process.
 
 So, here's my best shot at a CI/CD Joel Test for the 2020s.
@@ -95,7 +95,7 @@ be able to roll back manually where necessary (though it's generally best to fai
 
 This also necessitates the use of blue-green deploys, canarying, healthchecks, and myriad
 other strategies to mitigate outage risk. It's very powerful to be able to turn a
-possible outage into a mere degredation.
+possible outage into a mere degradation.
 
 
 ### 10. Does your Infrastructure as Code live alongside the service it hosts?
@@ -116,7 +116,7 @@ if you conflate a feature's launch with its release. This also means that you ca
 preview and refine changes with flagship customers before rolling them out more widely.
 
 
-### 12. Do you include ticket ids in your commits or branches?
+### 12. Do you include ticket IDs in your commits or branches?
 
 You need to be able to tie every commit back to the ticket that spawned it. It might not
 be you debugging a change that you merged, so it needs to be really easy to go back
