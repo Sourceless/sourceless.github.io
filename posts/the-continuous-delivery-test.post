@@ -132,9 +132,3 @@ from your own machine, having the ability to might be useful in a pinch, too.
 
 You should be able to deploy to a dev environment (shared or ephemeral) so that
 you can easily validate your work in situ.
-
-
-### 14. Do you have at least one path to live environment?
-
-Posts before this one have asked if you've had a staging environment -- and at the
-very least you should have one prod-like pre-prod environment to validate changes in.
