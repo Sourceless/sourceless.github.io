@@ -1,0 +1,140 @@
+{:date #inst "2022-07-07"
+ :tags ["joel-test", "devops", "continuous-delivery"]
+ :title "The Continuous Delivery Test"}
+---
+## The Continuous Delivery Test
+
+In 2000, Joel Spolsky published an piece on what he believed were the
+key factors that separated high-performing teams from the rest, in a post titled
+[The Joel Test: 12 Steps to Better Code](https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/).
+It contains many insights that are still useful to this day; however, the world,
+software, and the teams that make it have moved on in the nearly 22 years since
+that post.
+
+In 2015, John Kodumal of LaunchDarkly published an updated [Joel Test for Continuous Delivery](https://circleci.com/blog/joel-test-for-continuous-delivery/).
+While being far more up-to-date, it's still slipped a little in relevance.
+
+If this post were to have an alternate title, it'd be 'Front-load Your Risks'.
+All of the advices below seeks to move risks away from the act of deployment
+and move them to earlier steps of the development process.
+
+So, here's my best shot at a CI/CD Joel Test for the 2020s.
+
+
+### 1. Do you use a distributed version control system?
+
+Git, GitHub, and the ecosystems around them have eaten the software world,
+and for good reason. Beyond the usual advantages - branching, merging,
+and easy rollbacks, many of these hosted git servers now come with a whole slew
+of other productivity tooling.
+
+Especially notable are those that move your CI closer to your source code,
+such as GitHub Actions, and GitLab CI/CD.
+
+
+### 2. Do you practice [trunk-based development](https://trunkbaseddevelopment.com/)?
+
+Trunk-based development rolls up a bunch of good practices under one system.
+
+It forces you to have one good `main` branch that is always deployable (and by implication,
+always able to roll back), and encourages merging small features in one at a time.
+
+
+### 3. Do you merge little and often?
+
+It's been known for some time now that large pull requests tend to get
+cursory reviews at best. On top of this, squirreling away to work on a single
+feature for a long time means you are not spending adequate time making sure
+that you are building the right thing!
+
+This also means using small, ticket-scoped feature branches, where the changes
+have a very tight scope.
+
+
+### 4. Do two people read code before it is merged?
+
+You'll notice I was very careful to avoid mentioning how this should take place.
+For some, pull requests are the right tool, but pairing and mob programming are
+also sufficient.
+
+Nobody should be solely responsible for any code.
+
+
+### 5. Do you require changes to pass checks before they can be merged?
+
+One of the leading causes of outages is deployments. You should do your best to
+make sure that broken code never gets deployed in the first place.
+
+
+### 6. Can you test your changes in a production-like environment before you deploy it?
+
+There are many ways to go about this. You could spin up a small clone of your
+production env, run the tests, and then kill it, or where this is not possible,
+you can run tests against mirrored traffic, or even run a canary.
+
+
+### 7. Do you have a `main` branch that is always deployable?
+
+This is possibly the most important takeaway (and it's present in the 2015 circleci post
+referenced above!). Having an always-deployable `main` will make deploys **boring**.
+
+In a good way.
+
+
+### 8. Do you deploy to production as soon as `main` is updated?
+
+Your deploy should be automated and happen right upon merge. This removes a burden
+from the team delivering a product and allows them to focus on features and reliability
+rather than long-winded release ceremonies.
+
+
+### 9. Does your deploy process self-heal?
+
+When a deployment fails, can you roll back automatically? In addition to this, you should
+be able to roll back manually where necessary (though it's generally best to fail forwards!)
+
+This also necessitates the use of blue-green deploys, canarying, healthchecks, and myriad
+other strategies to mitigate outage risk. It's very powerful to be able to turn a
+possible outage into a mere degredation.
+
+
+### 10. Does your Infrastructure as Code live alongside the service it hosts?
+
+It's a good idea to colocate any IaC with the software it's running rather than keeping
+the two in separate repositories. This dodges any dependency management between the two,
+and in many cases will save you a pipeline or two.
+
+It's an antipattern (in the author's opinion) to have all infrastructure code completely
+separate from
+
+
+### 11. Do you use feature flags?
+
+Releases are a terrible mechanism for launching new features. You want to be able to
+run that shiny new feature in production as soon as possible, and you can't do that
+if you conflate a feature's launch with its release. This also means that you can
+preview and refine changes with flagship customers before rolling them out more widely.
+
+
+### 12. Do you include ticket ids in your commits or branches?
+
+You need to be able to tie every commit back to the ticket that spawned it. It might not
+be you debugging a change that you merged, so it needs to be really easy to go back
+and find out *why* something was changed in order to make the right decision to
+fix it.
+
+
+### 13. Can you still deploy from your own machine?
+
+A key factor in developing software and infrastructure quickly is tight feedback
+loops. While it's probably not a great idea to be deploying directly to production
+from your own machine, having the ability to might be useful in a pinch, too.
+
+You should be able to deploy to a dev environment (shared or ephemeral) so that
+you can easily validate your work in situ.
+
+
+### 14. Do you have at least one path to live environment?
+
+Posts before this one have asked if you've had a staging environment -- and at the
+very least you should have one prod-like pre-prod environment to validate changes in.
