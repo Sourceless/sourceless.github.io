@@ -128,7 +128,7 @@ and find out *why* something was changed in order to make the right decision to
 fix it.
 
 
-### 13. Can you still deploy from your own machine?
+### 12. Can you still deploy from your own machine?
 
 A key factor in developing software and infrastructure quickly is tight feedback
 loops. While it's probably not a great idea to be deploying directly to production
@@ -136,3 +136,16 @@ from your own machine, having the ability to might be useful in a pinch, too.
 
 You should be able to deploy to a dev environment (shared or ephemeral) so that
 you can easily validate your work in situ.
+
+
+### 13. Can you show what will happen when a branch is merged?
+
+Most IaC tools offer the ability to diff the changes they want to make. It's
+vitally important that when you go to merge some changes in, you know what the
+changes are, why you're making them (see point 11), and the effect the changes
+will have on the product or system.
+
+This could be a `cdk diff`, or a visual diff if you're making a change to a
+frontend. Seldom is the code itself the interesting an crucial part of
+why you're making a change, and the effect of your changeset should be evident
+not only to reviewers, but to bleary-eyed SREs at 4am.
