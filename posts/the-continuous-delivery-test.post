@@ -149,3 +149,9 @@ This could be a `cdk diff`, or a visual diff if you're making a change to a
 frontend. Seldom is the code itself the interesting an crucial part of
 why you're making a change, and the effect of your changeset should be evident
 not only to reviewers, but to bleary-eyed SREs at 4am.
+
+
+---
+
+
+*Thanks to Josh Finch for his valuable feedback on this post.*
