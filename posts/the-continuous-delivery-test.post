@@ -4,7 +4,7 @@
 ---
 ## The Continuous Delivery Test
 
-In 2000, Joel Spolsky published an piece on what he believed were the
+In 2000, Joel Spolsky published a piece on what he believed were the
 key factors that separated high-performing teams from the rest, in a post titled
 [The Joel Test: 12 Steps to Better Code](https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/).
 It contains many insights that are still useful to this day; however, the world,
@@ -37,9 +37,9 @@ such as GitHub Actions, and GitLab CI/CD.
 Trunk-based development rolls up a bunch of good practices under one system.
 
 It forces you to have one good `main` branch that is always deployable (and by implication,
-always able to roll back), and encourages merging small features in one at a time.
+always able to roll back), and encourages merging small features one at a time.
 
-Having an always-deployable `main` means that your deploy process becomes
+Having an always-deployable `main` means that your deployment process becomes
 a lot more boring (which is great!), and is often indicative of a process
 that supports developers, rather than requiring long hours spent resolving
 merge conflicts and preparing release notes.
@@ -48,7 +48,7 @@ merge conflicts and preparing release notes.
 ### 3. Do you merge little and often?
 
 It's been known for some time now that large pull requests tend to get
-cursory reviews at best. On top of this, squirreling away to work on a single
+cursory reviews at best. On top of this, squirrelling away to work on a single
 feature for a long time means you are not spending adequate time making sure
 that you are building the right thing!
 
@@ -71,20 +71,20 @@ One of the leading causes of outages is deployments. You should do your best to
 make sure that broken code never gets deployed in the first place.
 
 
-### 6. Can you test your changes in a production-like environment before you deploy it?
+### 6. Can you test your changes in a production-like environment before you deploy them?
 
 There are many ways to go about this. You could spin up a small clone of your
-production env, run the tests, and then kill it, or where this is not possible,
-you can run tests against mirrored traffic, or even run a canary.
+production env, run the tests, and then kill it. Where this is not possible,
+you can run tests against mirrored traffic or even run a canary.
 
 
 ### 7. Do you deploy to production as soon as `main` is updated?
 
-Your deploy should be automated and happen right upon merge. This removes a burden
+Your deployments should be automated and happen right upon merge. This removes a burden
 from the team delivering a product and allows them to focus on features and reliability
-rather than long-winded release ceremonies. It can be hard to get here from releasing
+rather than long-winded release ceremonies. It can be hard to get here if you're currently releasing
 once a day, week, etc. -- a mature approach to managing the risks of deployment
-is required, as well as battle-tested deploy processes and tools.
+is required, as well as battle-tested deployment processes and tools.
 
 The earlier you start doing this, the easier it will be.
 
@@ -146,12 +146,12 @@ changes are, why you're making them (see point 11), and the effect the changes
 will have on the product or system.
 
 This could be a `cdk diff`, or a visual diff if you're making a change to a
-frontend. Seldom is the code itself the interesting an crucial part of
-why you're making a change, and the effect of your changeset should be evident
-not only to reviewers, but to bleary-eyed SREs at 4am.
+frontend. Seldom is the code itself the interesting and crucial part of
+why you're making a change. The effect of your changeset should be evident
+not only to reviewers but also to bleary-eyed SREs at 4am.
 
 
 ---
 
 
-*Thanks to Josh Finch for his valuable feedback on this post.*
+*Thanks to [Josh Finch](https://github.com/openfinch) for his valuable feedback on this post.*
