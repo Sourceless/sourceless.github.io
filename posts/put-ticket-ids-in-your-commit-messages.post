@@ -1,0 +1,88 @@
+{:date #inst "2022-07-29"
+ :tags ["compliance", "devops", "continuous-delivery"]
+ :title "Put Ticket IDs in your Commit Messages"}
+---
+## Put Ticket IDs in your Commit Messages
+
+In my previous post [The Continuous Delivery Test](https://sourceless.org/posts/the-continuous-delivery-test.html)
+I included a point:
+
+> 11. Do you include ticket IDs in your commits or branches?
+
+[This sparked quite a lot of discussion on hacker news.](https://news.ycombinator.com/item?id=32045651).
+I think it'd be useful to highlight some of my reasoning for including this
+point, and highlight some of the advice given by some of the commenters.
+
+### Why you should do it
+#### Link work back to the ticket that spawned it
+If you're in anywhere but the smallest companies, you probably have some sort of
+compliance requirements that require you to be able to link work done back to
+the planning that caused it to happen.
+
+The reason that compliance frameworks want you to do this is mainly so there is
+an unbroken chain of culpability that can be used to identify the root cause
+of a potential issue.
+
+But it's also just good documentation. Do you really want to play archeologist
+every time you need to figure out why a certain commit was made, or why a
+certain line of code is a bit weird?
+
+As one lovely HN commenter puts it:
+> I can't tell you how many times I've dug into the commit history to find where
+> a change happened, then wanted to know the full context, and been glad I could
+> just pull up the years-old ticket directly and see a detailed description of
+> intent and requirements, discussions in the comments, mock-ups, etc etc
+
+#### Track the content of releases
+In some environments you might need to prepare release notes or a changelog.
+
+This is, of course, much easier if you can derive the list of tickets from the
+delta of what's going in to production.
+
+#### Measure how well your team is delivering
+In [Accelerate](https://www.oreilly.com/library/view/accelerate/9781457191435/),
+Forsgren, Humble, and Kim pick out four metrics that seperate high performing
+teams from the rest - and they all have to do with deployment.
+
+The first of those metrics is **Lead Time**, which measures the amount of time
+it takes from starting a ticket (or the first commit made, depending how you
+want to measure) to when it's eventually released.
+
+Having some metadata available makes this much easier to do!
+
+#### It's not that hard
+Seriously, it's just habit. It might sound annoying or bureaucratic to you if
+you've never done it before, but after a couple weeks it'll probably be an
+unconscious practice that you'll never think about again.
+
+And if typing <10 extra characters at the start of a commit message is really
+cramping your style, you can always write a `prepare-commit-msg` git hook.
+
+### Why you might not be doing it
+#### Your company is small
+If you're starting to grow and compliance is on the horizon, it's much easier
+to start now than when the deadline looms.
+
+#### It's a personal project
+Yep. Why would you? It's needless overhead.
+
+#### Merging/branching strategy
+I'm probably not going to convince you otherwise, but I think long-lived feature
+branches **suck**. They require complex merge patterns, bundle risk, and often
+require a bureaucratic ritual to merge in to a production branch.
+
+[Trunk-based development](https://trunkbaseddevelopment.com/) all the way,
+and if you can have a branch per ticket *with the ticket ID in the branch name*,
+even better.
+
+#### I need to make an ad-hoc change
+This usually falls in to one of two categories.
+
+The first is "I want to make a change off the books". Usually this is a culture
+problem; you should feel empowered to create small tickets as you see fit to
+fix small issues. It might also be that your team doesn't create time for care
+and feeding work.
+
+The second is "I don't know where this change belongs". Can you roll it in to
+another ticket you're already working on, e.g. one where you're already touching
+the code in question? Or maybe it's enough work that it should be its own item?
