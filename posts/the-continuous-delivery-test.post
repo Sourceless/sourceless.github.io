@@ -132,9 +132,9 @@ fix it.
 
 A key factor in developing software and infrastructure quickly is tight feedback
 loops. While it's probably not a great idea to be deploying directly to production
-from your own machine, having the ability to might be useful in a pinch, too.
+from your own machine, having the ability to do so might be useful in a pinch.
 
-You should be able to deploy to a dev environment (shared or ephemeral) so that
+You should be able to deploy to a dev environment (shared or ephemeral) such that
 you can easily validate your work in situ.
 
 
