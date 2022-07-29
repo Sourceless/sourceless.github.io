@@ -2,7 +2,7 @@
  :tags ["compliance", "devops", "continuous-delivery"]
  :title "Put Ticket IDs in your Commit Messages"}
 ---
-# Put Ticket IDs in your Commit Messages
+## Put Ticket IDs in your Commit Messages
 
 In my previous post [The Continuous Delivery Test](https://sourceless.org/posts/the-continuous-delivery-test.html)
 I included a point:
@@ -28,10 +28,10 @@ every time you need to figure out why a certain commit was made, or why a
 certain line of code is a bit weird?
 
 As one lovely HN commenter puts it:
-> I can't tell you how many times I've dug into the commit history to find where
+> 'I can't tell you how many times I've dug into the commit history to find where
 > a change happened, then wanted to know the full context, and been glad I could
 > just pull up the years-old ticket directly and see a detailed description of
-> intent and requirements, discussions in the comments, mock-ups, etc etc
+> intent and requirements, discussions in the comments, mock-ups, etc etc'
 
 ### Track the content of releases
 In some environments you might need to prepare release notes or a changelog.
