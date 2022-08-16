@@ -29,3 +29,8 @@ h2, h3, h4, h5, h6 {
         width: 100%;
     }
 }
+
+pre {
+	background: #1F2933;
+	padding: 1em;
+}
