@@ -1,0 +1,138 @@
+{:date #inst "2023-07-17"
+ :tags ["pifs", "functional programming"]
+ :title "Programming in Functional Style: Functions"}
+---
+## Programming in Functional Style: Functions
+
+If you've been programming for more than a couple of years, you've probably
+heard of functional programming. You might even have picked up a functional
+language and played around with it.
+
+Functional programming languages span a range of styles. On the one hand,
+you have LISP-style languages, the masters of which pull off incredible
+feats of language reinvention. On the other, you have Haskell wizards, whose
+carefully structured types give their programs and data structures properties
+that C programmes can only dream of.
+
+However, functional programming is not confined to functional languages; the
+languages merely support the use of functional programs. So what does it mean
+to be *functional*?
+
+Surely every programming language is functional, in the sense that it *does*
+something?
+
+True -- but "functional" in this context means centering your programs around
+*functions*.
+
+
+### Functions
+You know what a function is, right? Well, you probably have some conception at
+least. You migh have heard it in a maths class, or you know it's what you make
+every time you write `def` or `function()`.
+
+Here's a very loose definition:
+> A function f is a transformation that takes some input X and returns some
+> output f(X).
+
+This limited definition does fall apart somewhat quickly, unfortunately.
+
+Or does it?
+
+
+#### Counterexample 1: Multiple inputs
+Functions in `<favourite language>` can take multiple arguments, but the
+definition given only allows a single input!
+
+I won't go into detail in this post about the various ways we can deal with
+this, but a simple solution to this is lists.
+
+> Something that looks like a function with N arguments can be transformed into
+> a function with one argument that is a list of length N
+
+
+#### Counterexample 2: The state of the world
+Functions in `<favourite language>` might behave differently depending on their
+context!
+
+This means that for some input `X`, there might be a different output for
+`f(X)`!
+
+Unless, that is...
+
+> When something looks like a function, but changes depending on its context,
+> you can turn it into a function by including the context in the input.
+
+An example of this is reading a file. Depending what's on disk, you'll get a
+different result! But if you consider what's on disk to be part of the input...
+
+### Purity
+
+I lied to you with the earlier definition of a function. What I actually gave
+was the definition of a *pure* function.
+
+Why do we care about a function being pure, though? Isn't it a lot of hassle
+to rewrite inputs and pass the entire world to the function every time? Well
+yes, okay, if you insist. I promise that sometimes there's a good reason to
+want it though.
+
+The best reason is that **you can always tell what a pure function's output
+will be just from its outputs**.
+
+Sound useful yet? No? Uh... well, look, what does that imply? What can you
+do with a pure function that your everday javascript function doesn't let
+you do?
+
+#### Referential Integrity
+Okay, don't let your eyes glaze over. I promise that I'll stop using
+five-dollar words.
+
+Consider that in a pure function, you can always tell what the output
+will bu just by knowing the input.
+
+So, it's easier to reason about! Especially when you've got a lot of
+these pure functions glued together. And to wind back to 'referential
+integrity', all it means is that you can tell what the output will be
+just by looking at the input. There's no outside context involved.
+
+Some languages, like Haskell, enforce this. Most others don't care. But you'll
+find this idea of things being easy to reason about pop up *everywhere*.
+
+You just have to look.
+
+Think about dependency injection. What is it really? It's about making a
+core program that you can plug the context into, so that you can make it easier
+to reason about -- usually with the goal of making it easier to test!
+
+There are other reasons you might have to want a program to be easy to reason
+aboub, such as wanting to prove it works a certain way, or wanting to match
+some existing modeling method.
+
+But the practical upshot for most is that it makes building and testing code
+WAY easier.
+
+#### Memoization
+Sorry! I can't help myself! Does it help if I just say 'caching' instead?
+
+Because that's all memoization really is. Caching at a micro level. And if
+you think about it, purity is really important to caching. If you want to load
+an image from a webserver quick, you want to cache it, right? But you can only
+*do* that if you're reasonably sure that the image is going to be the same one
+every time you ask for it.
+
+So purity really matters when you want to cache something and avoid extra work.
+
+
+### Bringing it all together
+
+So, what did we learn?
+
+> A pure function f tranforms some input X to an output f(X)
+
+Pure functions are:
+* Easier to reason about
+* Easier to test
+* Have *referential integrity*
+* Can be easily *memoized*
+
+I plan on doing a few more of these, so please reach out if this post helped
+you!
