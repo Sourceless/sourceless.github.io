@@ -34,3 +34,9 @@ pre {
 	background: #1F2933;
 	padding: 1em;
 }
+
+blockquote {
+    border-left: 0.5em solid white;
+    padding-left: 1.5em;
+    margin-left: 2em;
+}
