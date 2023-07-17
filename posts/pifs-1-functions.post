@@ -128,9 +128,9 @@ So, what did we learn?
 
 > A pure function f tranforms some input X to an output f(X)
 
-Pure functions are:
-* Easier to reason about
-* Easier to test
+Pure functions:
+* Are easier to reason about
+* Are easier to test
 * Have *referential integrity*
 * Can be easily *memoized*
 
