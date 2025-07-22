@@ -21,6 +21,8 @@ jobs:
       run: git pull
     - name: return to master
       run: git checkout master
+    - name: Install leiningen
+      run: wget https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein && chmod +x lein && sudo mv lein /usr/local/bin/lein
     - name: Install dependencies
       run: lein deps
     - name: Build site
