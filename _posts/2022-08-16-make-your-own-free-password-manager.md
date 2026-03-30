@@ -4,7 +4,6 @@ title: "Make your own (free) password manager"
 date: 2022-08-16
 tags: [passwords, security, selfhost]
 ---
-## Make your own (free) password manager
 
 > Before I say anything else, it should be noted that this solution requires
 > a little bit of background knowledge to set up and use. At the very least

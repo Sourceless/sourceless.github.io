@@ -4,7 +4,6 @@ title: "Perfect isn't Good Enough"
 date: 2022-06-22
 tags: [perfect, perfection, good-enough, laziness]
 ---
-## Perfect isn't Good Enough
 
 > Perfect is the enemy of the good
 

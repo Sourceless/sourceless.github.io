@@ -4,7 +4,6 @@ title: "Relearning to Learn"
 date: 2022-06-19
 tags: [learning, learning-to-learn]
 ---
-## Relearning to Learn
 
 Many years ago, I took a test. It was the first step of our
 "Learning to Learn" class. After answering a series of multiple

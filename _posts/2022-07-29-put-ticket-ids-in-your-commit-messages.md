@@ -4,7 +4,6 @@ title: "Put Ticket IDs in your Commit Messages"
 date: 2022-07-29
 tags: [compliance, devops, continuous-delivery]
 ---
-## Put Ticket IDs in your Commit Messages
 
 In my previous post [The Continuous Delivery Test](https://sourceless.org/posts/the-continuous-delivery-test.html)
 I included a point:

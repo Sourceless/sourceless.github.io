@@ -2,6 +2,9 @@ body {
     height: 100vh;
     background: #323F4B;
     color: #CBD2D9;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 a {
@@ -11,6 +14,13 @@ a {
 code {
     background: #1F2933;
     color: #E4E7DB;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.1em;
+}
+
+nav {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.2em;
 }
 
 #content {
@@ -18,6 +28,18 @@ code {
     display: block;
     width: 40em;
     margin: 10em auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+h1 {
+    font-size: 2.2em;
+}
+
+h2 {
+    font-size: 1.6em;
 }
 
 h2, h3, h4, h5, h6 {
@@ -39,4 +61,56 @@ blockquote {
     border-left: 0.5em solid white;
     padding-left: 1.5em;
     margin-left: 2em;
+}
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.skip-link:focus {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    padding: 0.5em 1em;
+    background: #1F2933;
+    color: #F5F7FA;
+    z-index: 100;
+}
+
+main {
+    margin-top: 2em;
+}
+
+main > h2:first-child {
+    margin-top: 0;
+}
+
+.post-meta {
+    margin-top: 2em;
+}
+
+.post-nav {
+    margin-top: 1em;
+}
+
+.post-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 2em;
+}
+
+.post-list li {
+    margin-bottom: 0.25em;
+}
+
+.post-date {
+    font-family: 'IBM Plex Mono', monospace;
+    margin-right: 1em;
 }

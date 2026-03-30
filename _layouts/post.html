@@ -2,13 +2,12 @@
 layout: default
 ---
 {{ content }}
-<br/>
-Posted {{ page.date | date: "%Y-%m-%d" }}
-<br/>
-<br/>
+<p class="post-meta">Posted {{ page.date | date: "%Y-%m-%d" }}</p>
+<nav class="post-nav" aria-label="Post navigation">
 {% if page.previous %}
-<a href="{{ page.previous.url | relative_url }}">&larr; {{ page.previous.title }}</a>
+<a href="{{ page.previous.url | relative_url }}" aria-label="Previous post: {{ page.previous.title }}">&larr; {{ page.previous.title }}</a>
 {% endif %}
 {% if page.next %}
-<a href="{{ page.next.url | relative_url }}">{{ page.next.title }} &rarr;</a>
+<a href="{{ page.next.url | relative_url }}" aria-label="Next post: {{ page.next.title }}">{{ page.next.title }} &rarr;</a>
 {% endif %}
+</nav>

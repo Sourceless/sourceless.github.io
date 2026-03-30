@@ -4,7 +4,6 @@ title: "Getting github pages to work with my custom site generator"
 date: 2021-01-17
 tags: [tutorial, guide, how]
 ---
-## Getting github pages to work with my custom site generator
 
 So, I built a [crappy site generator](https://github.com/Sourceless/sourceless.github.io).
 It's pretty bad, which is the result of some very targeted design decisions:

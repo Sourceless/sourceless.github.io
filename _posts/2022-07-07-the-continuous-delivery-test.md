@@ -4,7 +4,6 @@ title: "The Continuous Delivery Test"
 date: 2022-07-07
 tags: [joel-test, devops, continuous-delivery]
 ---
-## The Continuous Delivery Test
 
 In 2000, Joel Spolsky published a piece on what he believed were the
 key factors that separated high-performing teams from the rest, in a post titled

@@ -4,7 +4,6 @@ title: "The Documentation Triangle"
 date: 2021-03-19
 tags: [documentation, self-documenting, documentation-as-code, opinion, triangle]
 ---
-## The Documentation Triangle (or, why code isn't self documenting)
 
 At some point in your coding career, you've probably heard something like:
 

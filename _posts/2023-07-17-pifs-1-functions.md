@@ -4,7 +4,6 @@ title: "Programming in Functional Style: Functions"
 date: 2023-07-17
 tags: [pifs, functional programming]
 ---
-## Programming in Functional Style: Functions
 
 If you've been programming for more than a couple of years, you've probably
 heard of functional programming. You might even have picked up a functional

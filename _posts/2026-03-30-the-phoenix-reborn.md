@@ -4,7 +4,6 @@ title: "The Phoenix Reborn"
 date: 2026-03-30
 tags: [ai, llms, claude, phoenix project]
 ---
-## The Phoenix Reborn
 
 If you haven't read "The Phoenix Project" yet, this is your sign from the universe
 telling you that it's time. Go on, this post will still be here when you get back.
