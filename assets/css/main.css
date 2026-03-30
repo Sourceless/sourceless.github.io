@@ -2,7 +2,7 @@ body {
     height: 100vh;
     background: #323F4B;
     color: #CBD2D9;
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 16px;
     line-height: 1.6;
 }
@@ -21,13 +21,15 @@ code {
 nav {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 1.2em;
+    margin-bottom: 2em;
 }
 
 #content {
     background: #323F4B;
     display: block;
     width: 40em;
-    margin: 10em auto;
+    margin: 3em auto;
+    padding-bottom: 10em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -36,6 +38,11 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     font-size: 2.2em;
+}
+
+h1 a {
+    color: inherit;
+    text-decoration: none;
 }
 
 h2 {
@@ -85,7 +92,7 @@ blockquote {
 }
 
 main {
-    margin-top: 2em;
+    margin-top: 3em;
 }
 
 main > h2:first-child {
@@ -108,6 +115,9 @@ main > h2:first-child {
 
 .post-list li {
     margin-bottom: 0.25em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .post-date {
