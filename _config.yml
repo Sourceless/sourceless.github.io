@@ -1,0 +1,11 @@
+title: Sourceless
+url: "https://sourceless.org"
+baseurl: ""
+permalink: /posts/:title.html
+markdown: kramdown
+future: true
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md

@@ -1,0 +1,14 @@
+---
+layout: default
+---
+{{ content }}
+<br/>
+Posted {{ page.date | date: "%Y-%m-%d" }}
+<br/>
+<br/>
+{% if page.previous %}
+<a href="{{ page.previous.url | relative_url }}">&larr; {{ page.previous.title }}</a>
+{% endif %}
+{% if page.next %}
+<a href="{{ page.next.url | relative_url }}">{{ page.next.title }} &rarr;</a>
+{% endif %}

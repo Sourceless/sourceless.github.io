@@ -1,6 +1,8 @@
-{:date #inst "2022-08-16"
- :tags ["passwords", "security", "selfhost"]
- :title "Make your own (free) password manager"}
+---
+layout: post
+title: "Make your own (free) password manager"
+date: 2022-08-16
+tags: [passwords, security, selfhost]
 ---
 ## Make your own (free) password manager
 

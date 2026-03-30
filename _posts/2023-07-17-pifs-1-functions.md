@@ -1,6 +1,8 @@
-{:date #inst "2023-07-17"
- :tags ["pifs", "functional programming"]
- :title "Programming in Functional Style: Functions"}
+---
+layout: post
+title: "Programming in Functional Style: Functions"
+date: 2023-07-17
+tags: [pifs, functional programming]
 ---
 ## Programming in Functional Style: Functions
 

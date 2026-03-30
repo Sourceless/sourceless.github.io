@@ -1,23 +1,15 @@
-# site-generator
+# sourceless.org
 
-My very own crappy site generator!
+Personal blog built with Jekyll, hosted on GitHub Pages.
 
-## Planned features
+## Local development
 
-* Light mode (already has dark mode!)
-* Accessibility upgrades
-* Lots of refactoring
-* Template inheritance (if I can figure out classpath issues with Selmer)
+```bash
+bundle install
+bundle exec jekyll serve
+```
 
-## Installation
-
-* Install [leiningen](https://leiningen.org/)
-* `lein deps`
-
-## Usage
-
-* `build.sh`
-* look in the `dist` dir
+Then visit http://localhost:4000
 
 ## License
 

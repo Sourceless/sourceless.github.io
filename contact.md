@@ -1,8 +1,8 @@
-
-{:date #inst "2020-01-11"
- :tags ["contact"]
- :title "contact"
- :order 2}
+---
+layout: page
+title: contact
+permalink: /contact.html
+nav_order: 2
 ---
 * email: laurence@[this website]
 * github: [sourceless](https://github.com/Sourceless)

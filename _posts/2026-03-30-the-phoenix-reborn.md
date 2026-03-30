@@ -1,6 +1,8 @@
-{:date #inst "2026-03-30"
- :tags ["ai", "llms", "claude", "phoenix project"]
- :title "The Phoenix Reborn"}
+---
+layout: post
+title: "The Phoenix Reborn"
+date: 2026-03-30
+tags: [ai, llms, claude, phoenix project]
 ---
 ## The Phoenix Reborn
 
@@ -21,7 +23,7 @@ In the book and day-to-day DevOps, that's achieved in several ways:
 * Making use of tests in the development flow
 * Having prod-like environments available for testing
 
-Each of these seeks to reduce the amount of time a problem sits waiting before it 
+Each of these seeks to reduce the amount of time a problem sits waiting before it
 can be addressed by someone with the knowledge to fix it.
 
 ### Code is free but specification is still expensive

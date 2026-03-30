@@ -1,6 +1,8 @@
-{:date #inst "2022-06-19"
- :tags ["learning", "learning-to-learn"]
- :title "Relearning to Learn"}
+---
+layout: post
+title: "Relearning to Learn"
+date: 2022-06-19
+tags: [learning, learning-to-learn]
 ---
 ## Relearning to Learn
 

@@ -1,6 +1,8 @@
-{:date #inst "2021-03-19"
- :tags ["documentation", "self-documenting", "documentation-as-code", "opinion", "triangle"]
- :title "The Documentation Triangle"}
+---
+layout: post
+title: "The Documentation Triangle"
+date: 2021-03-19
+tags: [documentation, self-documenting, documentation-as-code, opinion, triangle]
 ---
 ## The Documentation Triangle (or, why code isn't self documenting)
 
@@ -30,14 +32,14 @@ that easy to approach?
 
 ### What, Why, How: The Documentation Triangle
 ```
-        What        
-         /\         
-        /  \        
-       /    \       
-      /      \      
-     /        \     
-    /__________\    
- Why            How 
+        What
+         /\
+        /  \
+       /    \
+      /      \
+     /        \
+    /__________\
+ Why            How
 ```
 Here's a rule of thumb I've seen repeated in a few places regarding how to
 ensure that your documentation is up to scratch.

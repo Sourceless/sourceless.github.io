@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>{% if page.title %}Sourceless - {{ page.title }}{% else %}Sourceless{% endif %}</title>
+        <meta name="description" content="{{ page.summary | default: '' }}"/>
+        <meta name="keywords" content="{{ page.tags | join: ', ' }}"/>
+        <meta charset="utf-8"/>
+        <meta name="author" content="Laurence Pakenham-Smith"/>
+        <meta name="copyright" content="2020-{{ 'now' | date: '%Y' }} Laurence Pakenham-Smith"/>
+        <meta name="robots" content="index"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="{{ '/assets/css/main.css' | relative_url }}"/>
+    </head>
+
+    <body>
+        <code id="content">
+            <h1>sourceless</h1>
+
+            <a href="{{ '/' | relative_url }}">index</a>
+            {% assign sorted_pages = site.pages | where_exp: "p", "p.nav_order" | sort: "nav_order" %}
+            {% for p in sorted_pages %}
+            <a href="{{ p.url | relative_url }}">{{ p.title }}</a>
+            {% endfor %}
+
+            {{ content }}
+        </code>
+    </body>
+</html>

@@ -1,7 +1,8 @@
-{:date #inst "2020-01-11"
- :tags ["about"]
- :title "about"
- :order 1}
+---
+layout: page
+title: about
+permalink: /about.html
+nav_order: 1
 ---
 Hi, I'm Laurence.
 

@@ -1,6 +1,8 @@
-{:date #inst "2021-01-17"
- :tags ["tutorial", "guide", "how"]
- :title "Getting github pages to work with my custom site generator"}
+---
+layout: post
+title: "Getting github pages to work with my custom site generator"
+date: 2021-01-17
+tags: [tutorial, guide, how]
 ---
 ## Getting github pages to work with my custom site generator
 

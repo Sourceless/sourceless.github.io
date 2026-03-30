@@ -1,6 +1,8 @@
-{:date #inst "2022-07-07"
- :tags ["joel-test", "devops", "continuous-delivery"]
- :title "The Continuous Delivery Test"}
+---
+layout: post
+title: "The Continuous Delivery Test"
+date: 2022-07-07
+tags: [joel-test, devops, continuous-delivery]
 ---
 ## The Continuous Delivery Test
 

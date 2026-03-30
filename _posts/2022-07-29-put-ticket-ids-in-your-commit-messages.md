@@ -1,6 +1,8 @@
-{:date #inst "2022-07-29"
- :tags ["compliance", "devops", "continuous-delivery"]
- :title "Put Ticket IDs in your Commit Messages"}
+---
+layout: post
+title: "Put Ticket IDs in your Commit Messages"
+date: 2022-07-29
+tags: [compliance, devops, continuous-delivery]
 ---
 ## Put Ticket IDs in your Commit Messages
 
