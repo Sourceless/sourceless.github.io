@@ -1,19 +1,48 @@
+:root {
+    --bg: #323F4B;
+    --text: #CBD2D9;
+    --link: #F5F7FA;
+    --code-bg: #1F2933;
+    --code-text: #E4E7DB;
+    --border: white;
+}
+
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+        --bg: #F5F7FA;
+        --text: #323F4B;
+        --link: #1F2933;
+        --code-bg: #E4E7EB;
+        --code-text: #1F2933;
+        --border: #323F4B;
+    }
+}
+
+[data-theme="light"] {
+    --bg: #F5F7FA;
+    --text: #323F4B;
+    --link: #1F2933;
+    --code-bg: #E4E7EB;
+    --code-text: #1F2933;
+    --border: #323F4B;
+}
+
 body {
     height: 100vh;
-    background: #323F4B;
-    color: #CBD2D9;
+    background: var(--bg);
+    color: var(--text);
     font-family: 'IBM Plex Mono', monospace;
     font-size: 16px;
     line-height: 1.6;
 }
 
 a {
-    color: #F5F7FA;
+    color: var(--link);
 }
 
 code {
-    background: #1F2933;
-    color: #E4E7DB;
+    background: var(--code-bg);
+    color: var(--code-text);
     font-family: 'IBM Plex Mono', monospace;
     font-size: 1.1em;
 }
@@ -25,11 +54,12 @@ nav {
 }
 
 #content {
-    background: #323F4B;
+    background: var(--bg);
     display: block;
     width: 40em;
     margin: 3em auto;
     padding-bottom: 10em;
+    position: relative;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -60,14 +90,18 @@ h2, h3, h4, h5, h6 {
 }
 
 pre {
-	background: #1F2933;
-	padding: 1em;
+    background: var(--code-bg);
+    padding: 1em;
 }
 
 blockquote {
-    border-left: 0.5em solid white;
+    border-left: 0.5em solid var(--border);
     padding-left: 1.5em;
     margin-left: 2em;
+}
+
+hr {
+    border-color: var(--border);
 }
 
 .skip-link {
@@ -86,8 +120,8 @@ blockquote {
     width: auto;
     height: auto;
     padding: 0.5em 1em;
-    background: #1F2933;
-    color: #F5F7FA;
+    background: var(--code-bg);
+    color: var(--link);
     z-index: 100;
 }
 
@@ -123,4 +157,28 @@ main > h2:first-child {
 .post-date {
     font-family: 'IBM Plex Mono', monospace;
     margin-right: 1em;
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.header-row h1 {
+    margin: 0;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    color: var(--text);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 0;
+}
+
+.theme-toggle:hover {
+    opacity: 0.7;
 }

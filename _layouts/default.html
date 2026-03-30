@@ -14,12 +14,21 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap"/>
         <link rel="stylesheet" type="text/css" href="{{ '/assets/css/main.css' | relative_url }}"/>
+        <script>
+            (function() {
+                var theme = localStorage.getItem('theme');
+                if (theme) document.documentElement.setAttribute('data-theme', theme);
+            })();
+        </script>
     </head>
 
     <body>
         <a class="skip-link" href="#main-content">Skip to content</a>
         <div id="content">
-            <h1><a href="{{ '/' | relative_url }}">sourceless</a></h1>
+            <div class="header-row">
+                <h1><a href="{{ '/' | relative_url }}">sourceless</a></h1>
+                <button class="theme-toggle" aria-label="Toggle light/dark mode" onclick="toggleTheme()">☀ light</button>
+            </div>
 
             <nav aria-label="Main navigation">
                 <a href="{{ '/posts.html' | relative_url }}">posts</a>
@@ -35,5 +44,24 @@
                 {{ content }}
             </main>
         </div>
+        <script>
+            function getEffectiveTheme() {
+                var explicit = document.documentElement.getAttribute('data-theme');
+                if (explicit) return explicit;
+                return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+            }
+            function updateToggleIcon() {
+                var btn = document.querySelector('.theme-toggle');
+                var isDark = getEffectiveTheme() === 'dark';
+                btn.textContent = isDark ? '\u2600 light' : '\u263D dark';
+            }
+            function toggleTheme() {
+                var next = getEffectiveTheme() === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', next);
+                localStorage.setItem('theme', next);
+                updateToggleIcon();
+            }
+            updateToggleIcon();
+        </script>
     </body>
 </html>
