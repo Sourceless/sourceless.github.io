@@ -6,7 +6,7 @@ nav_order: 1
 ---
 Hi, I'm Laurence.
 
-I'm an Director of SRE in the AdTech industry.
+I'm a Director of SRE in the AdTech industry.
 In previous lives I've done SRE, security, and software in Healthcare and Government.
 
 Notable past projects include:
