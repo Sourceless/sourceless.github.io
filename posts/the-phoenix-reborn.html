@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Sourceless - The Phoenix Reborn</title>
+        <meta name="description" content=""/>
+        <meta name="keywords" content="["ai" "llms" "claude" "phoenix project"]"/>
+        <meta charset="utf-8"/>
+        <meta name="author" content="Laurence Pakenham-Smith"/>
+        <meta name="copyright" content="2020-2026 Laurence Pakenham-Smith"/>
+        <meta name="robots" content="index"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="https://sourceless.org/assets/css/main.css"/>
+    </head>
+
+    <body>
+        <code id="content">
+            <h1>sourceless</h1>
+
+
+<a href="https://sourceless.org">index</a>
+
+    <a href="https://sourceless.org/about.html">about</a>
+
+    <a href="https://sourceless.org/contact.html">contact</a>
+
+
+            <h2>The Phoenix Reborn</h2><p>If you haven't read "The Phoenix Project" yet, this is your sign from the universe telling you that it's time. Go on, this post will still be here when you get back?</p><p>Still here? Cool.</p><h3>A very quick Phoenix Project Recap</h3><p>An extremely condensed take of the central point of "The Phoenix Project" is:</p><blockquote><p> Shorten feedback loops as much as possible </p></blockquote><p>In the book and day-to-day devops, that's achieved in several ways:</p><ul><li>Colocating ops resources on dev teams, instead of siloing them in separate orgs</li><li>Making use of CI to provide fast feedback in a dev-like environment</li><li>Making use of tests in the development flow</li><li>Having prod-like environments available for testing</li></ul><p>Each of these seeks to reduce the amount of time a problem sits waiting before it  can be addressed by someone with the knowledge to fix it.</p><h3>Code is free but you are still in chains</h3><p>The change in quality of output from top-tier LLMs in late 2025 changed the game. Code is now easy to produce in good quality and high quantity. The new gap is one that has always existed: *understand whole problems and write a plan detailed enough to make a solution*.</p><p>Spec-driven development is a particularly promising output of this; structured input that captures every possible problem, solution, and decision in a small problem space.</p><p>But specs alone aren't enough; fortunately, however, Claude and co are very, VERY good at writing tests, pipelines, and just about any other verification tooling you could ever want, including lightweight (or heavyweight!) formal methods.</p><h3>Give the AI the tools it needs to succeed</h3><p>This is the only takeaway that you need from this post. *You must shorten the feedback loops for the AI as much as possible*. You need to make it possible for it to test its own work if you want high quality outputs.</p><p>At a minimum:</p><ul><li>Linter</li><li>Autoformatter</li><li>Tests</li><li>CI/CD pipelines (and access to read/run them!)</li></ul><p>Make your AI aware of them, make it use them, and make it constantly review its own work (or get another model to do it).</p>
+            <br/>
+            Posted 2026-03-30
+            <br/>
+            <br/>
+            
+<a href="https://sourceless.org/posts/pifs-1-functions.html">← Programming in Functional Style: Functions</a>
+
+
+
+        </code>
+    </body>
+</html>
