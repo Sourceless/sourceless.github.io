@@ -5,6 +5,9 @@ permalink: /posts/:title.html
 markdown: kramdown
 future: true
 
+plugins:
+  - jekyll-feed
+
 exclude:
   - Gemfile
   - Gemfile.lock
