@@ -105,6 +105,12 @@
                 function getPostText() {
                     var main = document.querySelector('main#main-content');
                     var clone = main.cloneNode(true);
+                    // On the landing page, remove everything from <hr> onward
+                    var hr = clone.querySelector('hr');
+                    if (hr) {
+                        while (hr.nextSibling) hr.nextSibling.remove();
+                        hr.remove();
+                    }
                     var skip = clone.querySelectorAll('h2:first-child, .read-aloud, .post-meta, .post-nav');
                     for (var i = 0; i < skip.length; i++) skip[i].remove();
                     return clone.innerText;
