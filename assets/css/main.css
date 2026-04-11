@@ -201,3 +201,36 @@ main > h2:first-child {
 .theme-toggle:hover {
     opacity: 0.7;
 }
+
+.read-aloud {
+    display: flex;
+    align-items: center;
+    gap: 0.75em;
+    padding-bottom: 1em;
+    margin-bottom: 2em;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.9em;
+}
+
+.read-aloud button {
+    background: none;
+    border: none;
+    color: var(--text);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1em;
+    cursor: pointer;
+    padding: 0;
+}
+
+.read-aloud button:hover {
+    opacity: 0.7;
+}
+
+.read-aloud label {
+    margin-left: 0.5em;
+}
+
+.read-aloud input[type="range"] {
+    width: 6em;
+    accent-color: var(--text);
+}

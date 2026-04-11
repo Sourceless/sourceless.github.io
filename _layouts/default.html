@@ -72,5 +72,102 @@
             }
             updateToggleIcon();
         </script>
+        <script>
+            (function() {
+                var el = document.getElementById('read-aloud');
+                if (!el || !window.speechSynthesis) return;
+                el.style.display = 'flex';
+
+                var synth = window.speechSynthesis;
+                var playBtn = document.getElementById('ra-play');
+                var stopBtn = document.getElementById('ra-stop');
+                var speedSlider = document.getElementById('ra-speed');
+                var speedVal = document.getElementById('ra-speed-val');
+                var bestVoice = null;
+                var keepAlive = null;
+
+                function pickVoice() {
+                    var voices = synth.getVoices();
+                    var neural = null, english = null;
+                    for (var i = 0; i < voices.length; i++) {
+                        var name = voices[i].name.toLowerCase();
+                        if (!neural && (/neural|enhanced|natural/.test(name))) neural = voices[i];
+                        if (!english && voices[i].lang.startsWith('en')) english = voices[i];
+                    }
+                    bestVoice = neural || english || voices[0] || null;
+                }
+
+                pickVoice();
+                if (synth.onvoiceschanged !== undefined) {
+                    synth.addEventListener('voiceschanged', pickVoice);
+                }
+
+                function getPostText() {
+                    var main = document.querySelector('main#main-content');
+                    var clone = main.cloneNode(true);
+                    var skip = clone.querySelectorAll('h2:first-child, .read-aloud, .post-meta, .post-nav');
+                    for (var i = 0; i < skip.length; i++) skip[i].remove();
+                    return clone.innerText;
+                }
+
+                function resetUI() {
+                    playBtn.innerHTML = '&#9654; play';
+                    playBtn.setAttribute('aria-label', 'Play');
+                    clearInterval(keepAlive);
+                    keepAlive = null;
+                }
+
+                function startKeepAlive() {
+                    clearInterval(keepAlive);
+                    keepAlive = setInterval(function() {
+                        if (synth.speaking && !synth.paused) {
+                            synth.pause();
+                            synth.resume();
+                        }
+                    }, 10000);
+                }
+
+                function speak() {
+                    var utt = new SpeechSynthesisUtterance(getPostText());
+                    if (bestVoice) utt.voice = bestVoice;
+                    utt.rate = parseFloat(speedSlider.value);
+                    utt.onend = resetUI;
+                    utt.onerror = resetUI;
+                    synth.speak(utt);
+                    playBtn.innerHTML = '|| pause';
+                    playBtn.setAttribute('aria-label', 'Pause');
+                    startKeepAlive();
+                }
+
+                playBtn.addEventListener('click', function() {
+                    if (synth.speaking && !synth.paused) {
+                        synth.pause();
+                        clearInterval(keepAlive);
+                        playBtn.innerHTML = '&#9654; resume';
+                        playBtn.setAttribute('aria-label', 'Resume');
+                    } else if (synth.paused) {
+                        synth.resume();
+                        startKeepAlive();
+                        playBtn.innerHTML = '|| pause';
+                        playBtn.setAttribute('aria-label', 'Pause');
+                    } else {
+                        speak();
+                    }
+                });
+
+                stopBtn.addEventListener('click', function() {
+                    synth.cancel();
+                    resetUI();
+                });
+
+                speedSlider.addEventListener('input', function() {
+                    speedVal.textContent = parseFloat(this.value).toFixed(1) + 'x';
+                    if (synth.speaking) {
+                        synth.cancel();
+                        speak();
+                    }
+                });
+            })();
+        </script>
     </body>
 </html>

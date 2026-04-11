@@ -1,6 +1,13 @@
 ---
 layout: default
 ---
+<div class="read-aloud" id="read-aloud" style="display:none" role="region" aria-label="Read aloud controls">
+    <button id="ra-play" aria-label="Play">&#9654; play</button>
+    <button id="ra-stop" aria-label="Stop">&#9632; stop</button>
+    <label for="ra-speed">speed:</label>
+    <input type="range" id="ra-speed" min="0.5" max="2.0" step="0.1" value="1.0"/>
+    <span id="ra-speed-val">1.0x</span>
+</div>
 {{ content }}
 <p class="post-meta">Posted {{ page.date | date: "%Y-%m-%d" }}</p>
 <nav class="post-nav" aria-label="Post navigation">
