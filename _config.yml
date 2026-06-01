@@ -3,7 +3,8 @@ url: "https://sourceless.org"
 baseurl: ""
 permalink: /posts/:title.html
 markdown: kramdown
-future: true
+future: false
+timezone: Etc/UTC
 
 plugins:
   - jekyll-feed
