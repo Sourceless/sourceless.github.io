@@ -3,6 +3,7 @@ layout: post
 title: "Don't read the code"
 date: 2026-08-15
 tags: [ai, agents, agentic engineering, formal methods, user stories, devops, opinion]
+summary: "Managers adapted to AI agents faster than engineers did, because they had already given up reading the code. Here's the job engineers are moving into."
 ---
 
 I've recently gone from Director to IC, and I've taken the opportunity to get deep in agentic engineering.
