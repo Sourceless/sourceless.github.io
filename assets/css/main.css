@@ -169,7 +169,7 @@ main > h2:first-child {
 }
 
 .post-list li {
-    margin-bottom: 0.25em;
+    margin-bottom: 0.5em;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -178,6 +178,50 @@ main > h2:first-child {
 .post-date {
     font-family: 'IBM Plex Mono', monospace;
     margin-right: 1em;
+}
+
+/* Generated fractal artwork, one per post. Both theme variants ride on custom
+   properties set inline per post, so the swap below is a single pair of rules
+   rather than per-post CSS. */
+.post-banner {
+    height: 12em;
+    margin-bottom: 2em;
+    background-image: var(--banner-dark);
+    background-size: cover;
+    background-position: center;
+}
+
+.post-banner + .page-title {
+    margin-top: 0;
+}
+
+.post-thumb {
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    margin-right: 0.75em;
+    vertical-align: -0.7em;
+    background-image: var(--thumb-dark);
+    background-size: cover;
+    background-position: center;
+}
+
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) .post-banner {
+        background-image: var(--banner-light);
+    }
+
+    :root:not([data-theme="dark"]) .post-thumb {
+        background-image: var(--thumb-light);
+    }
+}
+
+[data-theme="light"] .post-banner {
+    background-image: var(--banner-light);
+}
+
+[data-theme="light"] .post-thumb {
+    background-image: var(--thumb-light);
 }
 
 .header-row {

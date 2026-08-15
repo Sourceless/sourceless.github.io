@@ -1,0 +1,8 @@
+{% comment %}
+Decorative fractal banner for a post. Both theme variants are passed as custom
+properties so the CSS can swap them for the light theme, which a <picture>
+element could not do: the site's theme toggle is an explicit data-theme
+attribute, not just prefers-color-scheme.
+{% endcomment %}
+{% assign p = include.post %}
+<div class="post-banner" aria-hidden="true" style="--banner-dark: url('{{ '/assets/og/' | append: p.slug | append: '.png' | relative_url }}'); --banner-light: url('{{ '/assets/og/' | append: p.slug | append: '-light.png' | relative_url }}')"></div>

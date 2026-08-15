@@ -9,14 +9,11 @@ layout: default
     <input type="range" id="ra-speed" min="0.5" max="2.0" step="0.1" value="1.0"/>
     <span id="ra-speed-val">1.0x</span>
 </div>
-<h1>{{ latest.title }}</h1>
+{% include post-banner.html post=latest %}
+<h1 class="page-title">{{ latest.title }}</h1>
 {{ latest.content }}
 <p class="post-meta">Posted {{ latest.date | date: "%Y-%m-%d" }}</p>
 
 <hr/>
 <h2>all posts</h2>
-<ul class="post-list">
-{% for post in site.posts %}
-<li><span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span> <a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-{% endfor %}
-</ul>
+{% include post-list.html %}

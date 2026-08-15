@@ -60,7 +60,8 @@
             </nav>
 
             <main id="main-content">
-                {% if page.title %}<h1>{{ page.title }}</h1>{% endif %}
+                {% if page.date and page.slug %}{% include post-banner.html post=page %}{% endif %}
+                {% if page.title %}<h1 class="page-title">{{ page.title }}</h1>{% endif %}
                 {{ content }}
             </main>
         </div>
@@ -122,7 +123,7 @@
                         while (hr.nextSibling) hr.nextSibling.remove();
                         hr.remove();
                     }
-                    var skip = clone.querySelectorAll('h1:first-child, h2:first-child, .read-aloud, .post-meta, .post-nav');
+                    var skip = clone.querySelectorAll('.page-title, .post-banner, .read-aloud, .post-meta, .post-nav');
                     for (var i = 0; i < skip.length; i++) skip[i].remove();
                     return clone.innerText;
                 }

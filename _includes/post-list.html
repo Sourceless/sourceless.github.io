@@ -1,0 +1,9 @@
+<ul class="post-list">
+{% for post in site.posts %}
+<li>
+<span class="post-thumb" aria-hidden="true" style="--thumb-dark: url('{{ '/assets/og/' | append: post.slug | append: '-thumb.png' | relative_url }}'); --thumb-light: url('{{ '/assets/og/' | append: post.slug | append: '-thumb-light.png' | relative_url }}')"></span>
+<span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+<a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+</li>
+{% endfor %}
+</ul>
