@@ -33,7 +33,7 @@
         <a class="skip-link" href="#main-content">Skip to content</a>
         <div id="content">
             <div class="header-row">
-                <h1>
+                <div class="site-title">
                     <a href="{{ '/' | relative_url }}">
                         <span class="sr-only">sourceless</span>
                         <span class="ascii-logo" aria-hidden="true">                                    __
@@ -42,7 +42,7 @@
  (__  ) /_/ / /_/ / /  / /__/  __/ /  __(__  |__  )
 /____/\____/\__,_/_/   \___/\___/_/\___/____/____/</span>
                     </a>
-                </h1>
+                </div>
                 <button class="theme-toggle" aria-label="Toggle light/dark mode" onclick="toggleTheme()">☀ light</button>
             </div>
 
@@ -55,7 +55,7 @@
             </nav>
 
             <main id="main-content">
-                {% if page.title %}<h2>{{ page.title }}</h2>{% endif %}
+                {% if page.title %}<h1>{{ page.title }}</h1>{% endif %}
                 {{ content }}
             </main>
         </div>
@@ -117,7 +117,7 @@
                         while (hr.nextSibling) hr.nextSibling.remove();
                         hr.remove();
                     }
-                    var skip = clone.querySelectorAll('h2:first-child, .read-aloud, .post-meta, .post-nav');
+                    var skip = clone.querySelectorAll('h1:first-child, h2:first-child, .read-aloud, .post-meta, .post-nav');
                     for (var i = 0; i < skip.length; i++) skip[i].remove();
                     return clone.innerText;
                 }
