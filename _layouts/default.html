@@ -10,7 +10,12 @@
         <meta property="og:description" content="{{ page.summary | default: '' }}"/>
         <meta property="og:url" content="{{ page.url | absolute_url }}"/>
         <meta property="og:site_name" content="{{ site.title }}"/>
-        <meta name="twitter:card" content="summary"/>
+        {% if page.date and page.slug %}{% assign og_image = '/assets/og/' | append: page.slug | append: '.png' %}{% else %}{% assign og_image = '/assets/og/default.png' %}{% endif %}
+        <meta property="og:image" content="{{ og_image | absolute_url }}"/>
+        <meta property="og:image:width" content="1200"/>
+        <meta property="og:image:height" content="630"/>
+        <meta property="og:image:alt" content="A Julia set fractal generated from this page's text, in the sourceless.org palette"/>
+        <meta name="twitter:card" content="summary_large_image"/>
         <meta charset="utf-8"/>
         <meta name="author" content="Laurence Pakenham-Smith"/>
         <meta name="copyright" content="2020-{{ 'now' | date: '%Y' }} Laurence Pakenham-Smith"/>

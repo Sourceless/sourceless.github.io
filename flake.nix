@@ -11,10 +11,13 @@
       let
         pkgs = nixpkgs.legacyPackages.${system};
         ruby = pkgs.ruby_3_3;
+        # Used by tools/generate_og_images.py to render per-post OG cards.
+        python = pkgs.python3.withPackages (ps: [ ps.numpy ps.pillow ]);
       in {
         devShells.default = pkgs.mkShell {
           buildInputs = [
             ruby
+            python
             pkgs.bundler
             pkgs.pkg-config
             pkgs.libffi
