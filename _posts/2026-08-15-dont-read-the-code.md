@@ -124,5 +124,5 @@ Honestly - not much that's *new*. Almost every tool above already exists and mos
 you are; what changes is who they're pointed at. What you need to be doing right now is mapping out your
 personal working process and figuring out how you can bust every bottleneck.
 
-It's a better time than ever to read [The Phoenix Project](https://itrevolution.com/product/the-phoenix-project/) —
+It's a better time than ever to read [The Phoenix Project](https://itrevolution.com/product/the-phoenix-project/).
 I wrote about pointing it at agents in [The Phoenix Reborn](https://sourceless.org/posts/the-phoenix-reborn.html).
