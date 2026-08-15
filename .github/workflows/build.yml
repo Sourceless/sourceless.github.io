@@ -4,7 +4,8 @@ on:
   push:
     branches: [master]
   schedule:
-    - cron: "0 1 * * *"   # daily 01:00 UTC — publishes posts dated that day
+    - cron: "0 1 * * *"   # daily 01:00 UTC, publishes posts dated that day
+  workflow_dispatch:      # manual trigger, also re-arms the 60-day inactivity timer
 
 permissions:
   contents: read
