@@ -290,3 +290,19 @@ main > h2:first-child {
     width: 6em;
     accent-color: var(--text);
 }
+
+/* Talk slides. The artwork is drawn on its own near-white paper and is the same
+   file in both themes, so the figure supplies a matching mat rather than letting
+   the slide glare against the dark background. */
+.slide {
+    margin: 2em 0;
+    padding: 0.75em;
+    background: #FDFDFB;
+    border: 1px solid var(--border);
+}
+
+.slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
