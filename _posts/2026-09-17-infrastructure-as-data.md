@@ -8,6 +8,10 @@ summary: "If you treat infrastructure as data, you can test things that don't ex
 
 I gave this talk at DevOpsDays London 2026.
 
+<div class="video">
+  <iframe src="https://www.youtube-nocookie.com/embed/KBIPkWFv8P4" title="Infrastructure as Data, DevOpsDays London 2026" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+</div>
+
 <figure class="slide">
   <img src="{{ '/assets/talks/infrastructure-as-data/slide-01.png' | relative_url }}" alt="Title slide. Infrastructure as Data. Laurence Pakenham-Smith, Director, SRE, Kevel." loading="lazy">
 </figure>
