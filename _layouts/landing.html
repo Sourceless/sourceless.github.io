@@ -10,7 +10,7 @@ layout: default
     <span id="ra-speed-val">1.0x</span>
 </div>
 {% include post-banner.html post=latest %}
-<h1 class="page-title">{{ latest.title }}</h1>
+<h1 class="page-title"><a href="{{ latest.url | relative_url }}">{{ latest.title }}</a></h1>
 {{ latest.content }}
 <p class="post-meta">Posted {{ latest.date | date: "%Y-%m-%d" }}</p>
 
