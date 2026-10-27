@@ -134,9 +134,30 @@ blockquote {
 /* A side note set apart from the main text; add `{: .aside}` under a paragraph. */
 .aside {
     background: var(--code-bg);
+    border: 1px dashed var(--border);
+    border-radius: 0.25em;
+    margin: 1.5em 2em;
     padding: 1em 1.25em;
-    font-size: 0.9em;
+    font-size: 0.85em;
     font-style: italic;
+    opacity: 0.85;
+}
+
+.aside::before {
+    content: "An aside";
+    display: block;
+    margin-bottom: 0.5em;
+    font-size: 0.8em;
+    font-style: normal;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+@media only screen and (max-width: 768px) {
+    .aside {
+        margin: 1.5em 0;
+    }
 }
 
 hr {
