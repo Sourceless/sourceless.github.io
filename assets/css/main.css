@@ -131,6 +131,14 @@ blockquote {
     margin-left: 2em;
 }
 
+/* A side note set apart from the main text; add `{: .aside}` under a paragraph. */
+.aside {
+    background: var(--code-bg);
+    padding: 1em 1.25em;
+    font-size: 0.9em;
+    font-style: italic;
+}
+
 hr {
     border-color: var(--border);
 }
