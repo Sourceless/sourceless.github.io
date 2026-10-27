@@ -6,7 +6,7 @@ nav_order: 1
 ---
 Hi, I'm Laurence.
 
-I'm a Director of SRE in the AdTech industry.
+I'm a Director of Engineering Operations in the AdTech industry.
 In previous lives I've done SRE, security, and software in Healthcare and Government.
 
 Notable past projects include:
@@ -18,6 +18,8 @@ My topics of particular interest are:
 * User-first security, compliance, and governance
 * Logic programming
 * Type systems
+* Agentic development
+* Formal methods
 
 I've worked on a lot of projects in a lot of languages and frameworks; the best
 of those were backed by great teams that knew their tools inside out.
